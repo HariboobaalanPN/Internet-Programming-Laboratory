@@ -1,0 +1,68 @@
+<html>
+<head>
+<title>IP Lab Assignment-3</title>
+<style>
+    .bg-image {
+  background-image: url("./images/5.jpg");
+  filter: blur(8px);
+  -webkit-filter: blur(0px);
+  height: 100%; 
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+    .register{
+    background-color: rgba(0,0,0, 0.4); 
+    color: white;
+    font-size: 20;
+    border: 10px solid #f1f1f1;
+    border-radius: 30px;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 2;
+    width: 80%;
+    padding: 20px;
+    text-align: center;
+}
+    .inputfield{
+        text-align: center;
+        border: 2px solid #000000b0;
+	border-radius: 9px;
+    height: 4vh;
+    width: 13vw;
+    }
+    .registerbtn {
+        font-family: algerian;
+	background-color:rgba(26, 117, 46, 0.13);
+	color: rgba(5, 255, 18, 0.8);
+	font-weight: bold;
+    font-size: larger;
+    border-color: rgb(145, 231, 15);
+    box-shadow: rgb(145, 231, 15);
+    border-width: 10px;
+	padding: 20px 20px;
+	border-radius: 30px;
+}
+</style>
+</head>
+<body>
+<div class="bg-image">
+<div class="register">
+<center>
+<fieldset>
+<legend style="text-align:center;font-size: larger; font-weight: bold; font-family:algerian ;">Registration</legend>
+<form name ="forms1" method="POST" onSubmit="return validate()">
+<pre style=" align-items: center;font-family:cursive;">
+   Name :            <input type="text" class="inputfield" name="username" size="25" placeholder="Enter Name"><br>
+ Password :          <input type="password" class="inputfield" name="passwrd" size="16" placeholder="Enter Password"><br>
+Phone Number :   <input type="text" class="inputfield" name="phonenumber" size="15" placeholder="Enter Phone Number"><br>
+<input type="submit" class="registerbtn" value="Register !">
+</pre>
+</form>
+<script src="./scripts/validate.js"></script>
+</div>
+</div>
+</body>
+</html>

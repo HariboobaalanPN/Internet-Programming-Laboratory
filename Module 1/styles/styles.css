@@ -1,0 +1,28 @@
+.transition {
+    image-orientation: flip;
+    width: 100px;
+    height: 100px;
+    transition: width 2s, height 2s, transform 2s;
+    background-size: contain;
+    background-repeat: no-repeat;
+    border-radius: 10%;
+    margin: 10px;
+    }
+.transition:hover {
+    width: 270px;
+    height: 280px;
+    border-radius: 30px;
+    transform: rotate(360deg);
+    background-size: contain;
+}
+    
+.row {
+    display: flex;
+}
+.column {
+    flex: 50%;
+    padding-top: 70px;
+    padding-left: 170px;
+    height: 400px;
+    opacity: 0.95;
+}
