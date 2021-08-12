@@ -1,0 +1,110 @@
+<html>
+<head>
+<title>IP Lab Assignment-5</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<style>
+    .bg-image {
+  background-image: url("./images/5.jpg");
+  filter: blur(8px);
+  -webkit-filter: blur(0px);
+  height: 100%; 
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+    .register{
+    background-color: rgba(0,0,0, 0.4); 
+    color: white;
+    font-size: 20;
+    border: 10px solid #f1f1f1;
+    border-radius: 30px;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 2;
+    width: 80%;
+    padding: 20px;
+    text-align: center;
+}
+    .inputfield{
+        text-align: center;
+        border: 2px solid #000000b0;
+	border-radius: 9px;
+    height: 4vh;
+    width: 13vw;
+    }
+    .registerbtn {
+        font-family: algerian;
+	background-color:rgba(26, 117, 46, 0.13);
+	color: rgba(5, 255, 18, 0.8);
+	font-weight: bold;
+    font-size: larger;
+    border-color: rgb(145, 231, 15);
+    box-shadow: rgb(145, 231, 15);
+    border-width: 10px;
+	padding: 20px 20px;
+	border-radius: 30px;
+}
+</style>
+</head>
+<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.9/angular.min.js"></script>
+<body>
+<div class="bg-image">
+<div class="register">
+<fieldset>
+<legend style="text-align:center;font-size: larger; font-weight: bold; font-family:algerian ;">Registration</legend>
+<div ng-app="myApp" ng-controller="formCtrl">
+<form novalidate>
+					<label for="user.firstName">First Name:</label>
+					<input type="text" ng-model="user.firstName" placeholder="Enter your First Name" class="inputfield"><br>
+					<br><label for="user.lastName">Last Name:</label>
+					<input type="text" ng-model="user.lastName" placeholder="Enter your Last Name" class="inputfield"><br>
+					<br><label for="user.qualification">Qualification:</label>
+					<input type="text" ng-model="user.qualification" placeholder="Enter your Qualification" class="inputfield"><br>
+					<br><label for="user.areaofinterest">Area of Interest:</label>
+					<div ng-model="user.areaofinterest" ng-repeat="area in areas">
+						<br><input type="radio" value="{{area.area}}" name="area_of_interest" ng-model="area.area" id={{area.area}}>
+						<label for="{{area.area}}">{{area.area}}</label>
+					</div>
+					<br>
+					<label for="user.hobby">Hobby:</label>
+					<textarea rows=5 cols=100 ng-model="user.hobby" placeholder="Tell us about your Hobby" class="inputfield"></textarea>
+					<br><br>
+					<button ng-click="reset()" class="registerbtn">RESET</button>
+					<button ng-click="submit()" class="registerbtn">SUBMIT</button>
+</form>
+<script src="./scripts/validate.js"></script>
+</div>
+</div>
+
+<script>
+			var app = angular.module('myApp', []);
+			app.controller('formCtrl', function ($scope) {
+				$scope.master = {
+					firstName: "",
+					lastName: "",
+					hobby: "",
+					qualification: "",
+				};
+				$scope.areas = [{
+						area: "Augmented Reality"
+					},
+					{
+						area: "Virtual Reality"
+					},
+					{
+						area: "Gaming Sector"
+					},
+					{
+						area: "Cloud Computing"
+					}
+				];
+				$scope.reset = function () {
+					$scope.user = angular.copy($scope.master);
+				};
+				$scope.reset();
+			});
+		</script>
+</body>
+</html>
