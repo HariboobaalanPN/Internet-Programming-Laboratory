@@ -11,3 +11,6 @@
 
 ## Assignment-4: [Get Nth Element](https://hariboobaalanpn.github.io/Internet-Programming-Laboratory/Module%202/Assignment2.html)
 ### Implementing JS sorting and getting Nth largest element from array.
+
+## Assignment-5: [Angular JS Forms](https://hariboobaalanpn.github.io/Internet-Programming-Laboratory/Module%203/Assignment-1.html)
+### Implementing Forms using Angular JS.
